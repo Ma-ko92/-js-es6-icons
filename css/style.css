@@ -46,7 +46,7 @@ img {
 }
 
 /* Icon container */
-.icon_container{
+.icons_container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
