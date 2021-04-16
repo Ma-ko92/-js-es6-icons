@@ -123,22 +123,29 @@ $(document).ready(function() {
 	// 
 	// iconsArray ==> è l'array di oggetti che contiene le icone.
 	// container ==> è l'oggetto jQuery con il container che racchiude ogni singola icona sull'HTML.
+	// il return non riporta nulla!
 	function printIcons(iconsArray, container) {
 		// Ciclo l'array delle icone con "ForEach".
 		iconsArray.forEach((element) => {
 			// Inizio destrutturando element per leggere le informazioni di ogni singolo oggetto.
 			const {name, prefix, family} = element;
+
+			// Con ".toUpperCase" setto i nomi in maiuscolo.
+			const nameUppercase = name.toUpperCase();
+
 			// Salvo in una costante il backtick che verrà stamapato in pagina HTML.
 			// Con la destrutturazione fatta in precedenza, sostituisco gli elementi della classe 
 			// presenti, con ogni elemento dell'oggetto delle icone.
-			const iconElementHtml = `
+			
+			const iconElementHtml = ` 
 				<div id="icon_container" class="icon"> 
 					<i class="${family} ${prefix}${name}"></i>
 					<div>
-						${name.toUpperCase()}
+						${nameUppercase}
 					</div>
 				</div>
 			`;
+
 			// Con questa funzione "appenderò" ogni singolo elemento dell'ogeeto icons e le inserirò
 			// nel suo container nella pagina HTML.
 			container.append(iconElementHtml);
